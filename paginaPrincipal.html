@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tienda de Relojes</title>
+        <meta name="description" content="La mejor tienda en línea para comprar relojes de alta calidad.">
+        <meta name="keywords" content="reloj, moda, venta, relojería, tienda en línea">
+        <link rel="stylesheet" href="estiloss/estilosPrincipal.css">
+    </head>
+
+    <body>
+        <header class="encabezado">
+            <div class="logo">
+                <img src="imagenes/balanza de oro.png" alt=""/>
+                <h1>VALLOIR</h1> 
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#quien-somos">Quienes somos</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#footer">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="boton-audio" id="toggleMute" title="Audio">🔈</button>
+        </header>
+
+
+        <main>
+            <section class="video-pantallax">
+                <video autoplay muted loop playsinline id="videoFondo">
+                    <source src="videos/videoRelojLujoso.mp4" type="video/mp4">
+                    Your browser does not support the <code>video</code> tag.
+                    <div class="overlay">content</div>
+                </video>
+
+                <div class="video-texto">
+                    <h1>Valloir</h1>
+                    <p>Tradición que le da valor al tiempo.</p>
+                </div>
+            </section>
+
+            <section class="quien-somos" id="quien-somos">
+                <div  class="quieneso">
+                    <h1 style="color: #BFA36F ">Quienes somos</h1>
+                    <p>
+                        En Valloir, el tiempo no solo se mide, se honra. Somos una casa especializada en relojería de alta gama,
+                        donde la precisión francesa se encuentra con la elegancia atemporal. Nuestra pasión por el arte del reloj va más
+                        allá de las agujas: seleccionamos piezas exclusivas que combinan tradición, innovación y distinción.
+                        Desde nuestros inicios, Valloir ha sido sinónimo de excelencia, ofreciendo a nuestros clientes una experiencia
+                        única que refleja el lujo, la sofisticación y el carácter de cada segundo vivido.
+                    </p>
+                </div>
+            </section>
+
+            
+            <section class="video-pantallax">
+                <video autoplay muted loop playsinline id="videoFondo">
+                    <source src="videos/VideoRelojLujoso2.mp4" type="video/mp4">
+                    Your browser does not support the <code>video</code> tag.
+                </video>
+
+                <div class="video-texto">
+                    <h1>Valloir</h1>
+                    <p>No vendemos relojes, entregamos legado.</p>
+                </div>
+            </section>
+
+            <h1 style="color: #BFA36F">Productos Destacados</h1>
+
+            <p id="nuestro-producto">
+                Aquí puedes encontrar una variedad de relojes de alta calidad.<br>
+                El mejor conjunto de relojes de la más alta calidad.
+            </p>
+
+            <section id="productos">
+
+                <div class="card">
+                    <img src="imagenes/Reloj_Deportivo.png" alt="Reloj Deportivo">
+                    <div class="card-details">
+                        <span class="badge">MÁS VENDIDO</span>
+                        <h4>Reloj Deportivo</h4>
+                        <p class="price">$50</p>
+                        <p class="features">Resistente al agua, cronómetro</p>
+                        <div class="rating">★★★★☆ <span>(42)</span></div>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="btn-comprar" onclick="window.open('productos.html', '_blank')">Comprar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagenes/Reloj_Clasico.png" alt="Reloj Clásico">
+                    <div class="card-details">
+                        <span class="badge">NUEVO</span>
+                        <h4>Reloj Clásico</h4>
+                        <p class="price">$80</p>
+                        <p class="features">Correa de cuero, elegante</p>
+                        <div class="rating">★★★★★ <span>(18)</span></div>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="btn-comprar" onclick="window.open('productos.html', '_blank')">Comprar</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagenes/Reloj_Inteligente.png" alt="Reloj Inteligente">
+                    <div class="card-details">
+                        <span class="badge">OFERTA</span>
+                        <h4>Reloj Inteligente</h4>
+                        <p class="price">$150</p>
+                        <p class="features">Smartwatch, notificaciones</p>
+                        <div class="rating">★★★★☆ <span>(59)</span></div>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="btn-comprar" onclick="window.open('productos.html', '_blank')">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="imagenes/Reloj_Buceo.png" alt="Reloj con Correa de Acero">
+                    <div class="card-details">
+                        <span class="badge">DESTACADO</span>
+                        <h4>Reloj con Correa de Aceo</h4>
+                        <p class="price">$120</p>
+                        <p class="features">Sumergible, resistente</p>
+                        <div class="rating">★★★★☆ <span>(27)</span></div>
+                    </div>
+
+                    <div class="card-buttons">
+                        <button class="btn-comprar" onclick="window.open('productos.html', '_blank')">Comprar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="seccion-boton">
+
+                <button class="boton-transicion" onclick="window.open('productos.html', '_blank')">Más Productos</button>
+            </section>
+
+            <section id="promocion">
+                <h2>Encuentra el reloj ideal para esta nueva temporada de verano</h2>
+                <p>Depotividad, elegancia, estatus, profesionalismo <br> ¡Elige lo mejor!</p>
+                <h4>Mucho más que dar la hora... otorga estatus, otorga experiencias.</h4>
+
+                <video width="450" height="300" autoplay muted loop>
+                    <source src="videos/The Clock Is Ticking....mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta <code>video</code>.
+                </video>
+                
+                <audio id="audioFondo" loop>
+                    <source src="Non_Copyrighted_Music_@SmartToaster_-_Herbal_Tea_Lo-fi.mp3" type="audio/mpeg" />
+                </audio>
+            </section>
+        </main>
+
+        <footer class="footer-info" id="footer">
+            <div class="contenedor-footer">          
+                <div class="footer-col">
+                    <h4>CANAL DE ATENCIÓN</h4>
+                    <div class="contacto-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="icono correo" width="20">
+                        <div>
+                            <p>Comercial:</p>
+                            <p>ventas@valloirtime.com</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/159/159832.png" alt="icono audífonos" width="20">
+                        <div>
+                            <p>Servicio técnico:</p>
+                            <p>soporte@valloirtime.com</p>
+                        </div>
+                    </div>
+                    <div class="contacto-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/126/126341.png" alt="icono teléfono" width="20">
+                        <div>
+                            <p>Comercial: 987654321</p>
+                            <p>Servicio técnico: 912345678</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>OTROS ENLACES</h4>
+                    <ul>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Cambios y devoluciones</a></li>
+                        <li><a href="#">Servicio Técnico</a></li>
+                        <li><a href="#">Libro de reclamaciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p>&copy; 2025 Marca de Relojes Valloir. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+
+    <script src="scripts JS/compra.js" type="text/javascript"></script>
+
+</html>

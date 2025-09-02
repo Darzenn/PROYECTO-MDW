@@ -1,0 +1,444 @@
+/* ================================ */
+/*      Estilo General y Reset      */
+/* ================================ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #A6A6A6);
+    text-align: center;
+    color: #333;
+}
+
+
+/* ================================ */
+/*         Video de fondo           */
+/* ================================ */
+
+#videoFondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-pantallax {
+    position: sticky;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*texto del video*/
+
+.video-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Bodoni MT;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.4); /* opcional: mejora la lectura */
+    border-radius: 40px;
+}
+
+.video-texto h1 {
+    font-size: 100px;
+    margin-bottom: 0.5rem;
+}
+
+.video-texto p {
+    font-size: 50px;
+}
+
+/* ================================ */
+/*             Header              */
+/* (El título se anima de izq. a der.) */
+/* ================================ */
+@keyframes mover-derecha {
+    from {
+        transform: translateX(-100%);
+    }
+    to   {
+        transform: translateX(0);
+    }
+}
+
+.encabezado {
+    background-color: #1a1c2c;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2rem;
+    animation: mover-derecha 1s ease-out;
+    font-family: Bodoni MT;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 50px; /* ajusta según el tamaño de tu logo */
+    height: auto;
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ============================ */
+/*       BOTÓN AUDIO            */
+/* ============================ */
+.boton-audio {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #BFA36F;
+    color: #111111;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1002;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.boton-audio:hover {
+    background-color:#D4AF37;
+    color: #ffffff;
+}
+
+/* ================================ */
+/*         QUIENES SOMOS            */
+/* ================================ */
+
+.quieneso h1{
+    font-size: 56px;
+}
+
+.quieneso {
+    font-size: 26px;
+    max-width: 800px;         /* ancho máximo del texto */
+    margin: 0 auto;           /* centra el bloque horizontalmente */
+    text-align: left;         /* el texto dentro sigue alineado a la izquierda */
+    padding: 1rem;
+    line-height: 1.6;         /* mejora la lectura */
+}
+
+main h1{
+    font-size: 56px;
+}
+
+/* ================================ */
+/*         Sección Productos        */
+/* ================================ */
+
+#nuestro-producto{
+    font-size: 26px;
+}
+
+main h1{
+    font-family: Bodoni MT;
+}
+
+#productos {
+    padding-top: 20px;
+    display: grid;
+    /* Fuerza 2x2, pero seguirá siendo responsive */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto 40px;
+    max-width: 1200px;
+}
+#productos h2 {
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+#productos p {
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* ================================ */
+/*   Grid Gallery de Cards (4×2)    */
+/* ================================ */
+
+/* Cada “card” */
+.card {
+    background-color: #ffffff;
+    border-radius: 0px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ajuste de la imagen dentro de la card */
+.card img {
+    width: 40%;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Contenido de la derecha */
+.card-details {
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Badge en la esquina superior izquierda */
+.badge {
+    background-color: #0A6F4A;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    text-transform: uppercase;
+}
+
+/* Título del producto */
+.card-details h4 {
+    margin: 30px 0 10px;
+    font-size: 1.2rem;
+    color: #00003d;
+}
+
+/* Precio */
+.card-details .price {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Características */
+.card-details .features {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: #555;
+    text-align: inherit;
+}
+
+
+/* Estrellas de rating */
+.card-details .rating {
+    font-size: 0.9rem;
+    color: #FFD700;
+}
+.card-details .rating span {
+    color: #555;
+    font-size: 0.85rem;
+    margin-left: 5px;
+}
+
+.card-details {
+    width: 100%; /* Asegura que no se salga del contenedor */
+    box-sizing: border-box; /* Muy importante para evitar overflow por padding */
+}
+
+/* Estilo de botones */
+.card-buttons {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 90%;
+    flex-wrap: wrap; /* Para evitar que se desborden en pantallas pequeñas */
+    gap: 10px;
+    width: 100%;
+}
+
+.card-buttons button {
+    flex: 1;
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo individual */
+.btn-comprar {
+    background-color: #BFA36F;
+    color: white;
+}
+.btn-comprar:hover {
+    background-color: #e0a800;
+}
+
+
+
+/* Hover effect para toda la card */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================ */
+/*   Sección Promoción de Temporada  */
+/* ================================ */
+#promocion {
+    margin-top: 40px;
+}
+#promocion h2,
+#promocion p,
+#promocion h4 {
+    margin: 20px 0;
+    color: #333;
+}
+
+
+/* ================================ */
+/*      Sección Botón (Transición)  */
+/* ================================ */
+#seccion-boton {
+    margin-bottom: 60px;
+}
+
+
+.boton-transicion {
+    background-color: #1a1c2c;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 1s ease, transform 0.3s ease, color 1s ease;
+}
+
+.boton-transicion:hover,
+.boton-transicion:active {
+    background-color: #BFA36F;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* ================================ */
+/*             Footer               */
+/* ================================ */
+footer.footer-info {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 30px 10px;
+    margin-top: 30px;
+}
+.contenedor-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: auto;
+}
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin: 15px;
+}
+.footer-col h4 {
+    border-bottom: 2px solid #00003d;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+.contacto-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+}
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ================================ */
+/*          Media Queries           */
+/* ================================ */
+/* En móviles, las cards apilan verticalmente */
+
+@media (max-width: 600px) {
+    .card {
+        flex-direction: column;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+    .card-details {
+        padding: 12px 15px;
+    }
+    .badge {
+        top: 12px;
+        left: 15px;
+    }
+
+    /* El contenedor de ocho se vuelve columna única */
+    .contenedor-ocho {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, auto);
+        max-width: 95%;
+    }
+    .contenedor-ocho .hijo {
+        height: auto;
+    }
+}

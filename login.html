@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Login / Registro</title>
+        <link href="estiloss/login.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <section class="video-fondo">
+                <video autoplay muted loop playsinline id="videoFondo">
+                    <source src="videos/VideoRelojLujoso3.mp4" type="video/mp4">
+                    Your browser does not support the <code>video</code> tag.
+                </video>
+
+                <div class="capa-oscura"></div>
+
+
+                <div class="container">
+
+                    <div class="logo">
+                        <img src="imagenes/balanza de oro.png" alt=""/>
+                        <h1>VALLOIR</h1> 
+                    </div>
+
+                    <div class="tabs">
+                        <div class="tab active" id="login-tab">Iniciar Sesión</div>
+                        <div class="tab" id="register-tab">Registrarse</div>
+                    </div>
+
+                    <!-- Formulario Login -->
+                    <form id="login-form" class="active" action="/login" method="POST" novalidate>
+                        <label for="login-username">Usuario:</label>
+                        <input type="text" id="login-username" name="username" required autocomplete="username" />
+
+                        <label for="login-password">Contraseña:</label>
+                        <input type="password" id="login-password" name="password" required autocomplete="current-password" />
+
+                        <button type="submit">Entrar</button>
+
+                        <div id="login-message" class="message error-message"></div>
+                    </form>
+
+                    <!-- Formulario Registro -->
+                    <form id="register-form" action="/register" method="POST" novalidate>
+                        <label for="register-username">Usuario:</label>
+                        <input type="text" id="register-username" name="username" required autocomplete="username" />
+
+                        <label for="register-email">Correo Electrónico:</label>
+                        <input type="email" id="register-email" name="email" required autocomplete="email" />
+
+                        <label for="register-password">Contraseña:</label>
+                        <input type="password" id="register-password" name="password" required autocomplete="new-password" />
+
+                        <label for="register-password2">Confirmar Contraseña:</label>
+                        <input type="password" id="register-password2" name="password2" required autocomplete="new-password" />
+
+                        <button type="submit">Crear Cuenta</button>
+
+                        <div id="register-message" class="message error-message"></div>
+                    </form>
+
+                    <div id="success-message" class="message success-message">
+                        Usuario registrado con éxito. Por favor, inicia sesión.
+                    </div>
+                </div>
+
+
+            </section>
+        </main>
+        <script src="scripts JS/login.js"></script>
+    </body>
+</html>
