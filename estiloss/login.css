@@ -1,93 +1,95 @@
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #111;
-  margin: 0;
-  padding: 0;
+/* ================================ */
+/*       Estilos del Modal Login    */
+/* ================================ */
+
+/* Caja del modal */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    border: 2px solid #BFA36F;
+    background: linear-gradient(135deg, #2a2d44, #1a1c2c); /* Fondo elegante oscuro */
+    color: #fff; /* Texto claro sobre fondo oscuro */
 }
 
-.video-fondo {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Encabezado */
+.modal-header {
+    background: linear-gradient(135deg, #1a1c2c, #2a2d44);
+    color: #fff;
+    border-bottom: none;
 }
 
-#videoFondo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: 1;
+.modal-title {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-.capa-oscura {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
+/* Tabs */
+.nav-tabs {
+    border-bottom: 2px solid #444;
+    justify-content: center;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.nav-tabs .nav-link {
+    color: #ccc;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s;
 }
 
-.logo h1 {
-  margin: 0;
-  font-size: 2rem;
-  animation: mover-derecha 1s ease-out;
-  font-family: Bodoni MT;
+.nav-tabs .nav-link.active {
+    background-color: #BFA36F;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
 }
 
-.logo img {
-  width: 50px;
-  height: auto;
+/* Inputs */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #777;
+    padding: 10px;
+    background-color: #2e2e3e; /* gris oscuro */
+    color: #fff;
+    transition: 0.3s;
 }
 
-.container {
-  position: relative;
-  z-index: 3;
-  max-width: 300px;
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.4);
+.form-control::placeholder {
+    color: #bbb;
 }
 
-/* Tabs personalizados */
-.tabs {
-  display: flex;
-  cursor: pointer;
+.form-control:focus {
+    border-color: #BFA36F;
+    background-color: #383850;
+    box-shadow: 0 0 8px rgba(191,163,111,0.5);
 }
 
-.tab {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
-  border-bottom: 2px solid transparent;
-  font-weight: bold;
-  color: #eaeaea;
-  user-select: none;
-  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+/* Botón de login */
+.btn-dark {
+    background-color: #1a1c2c;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    transition: all 0.3s;
 }
 
-.tab.active {
-  border-bottom-color: #BFA36F;
-  color: #BFA36F;
+.btn-dark:hover {
+    background-color: #BFA36F;
+    color: #fff;
 }
 
-/* Formularios */
-form {
-  display: none;
+/* Botón de registro */
+.btn-success {
+    background-color: #BFA36F;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    transition: all 0.3s;
+    color: #111;
 }
 
-form.active {
-  display: block;
+.btn-success:hover {
+    background-color: #1a1c2c;
+    color: #fff;
 }
