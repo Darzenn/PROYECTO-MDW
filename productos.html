@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="estiloss/estilosPrincipal.css">
+    
     <link rel="icon" href="favicon.ico" />
 </head>
 
@@ -15,25 +16,27 @@
 
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand " href="#">
+        <div class="container-fluid me-0">
+            <a class="navbar-brand ms-5 " href="index.html">
                 <img src="imagenes/balanza de oro.png" alt="Logo" width="40" class="me-2">
-                <span>VALLOIR</span>
+                <span class="fw-bold">VALLOIR</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-end ms-5" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#promocion">Promoción</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
-                <div id="carrito-flotante" class="carrito-flotante">
-                    <h4>🛍️ Carrito</h4>
-                    <ul></ul>
-                    <p class="total">Total: S/ 0.00</p>
-                    <a href="zonapago.html" class="btn-pagar">Pagar</a>
+                <div id="carrito-flotante" class="carrito-flotante ms-5">
+                    <h4 class="nav-link dropdown-toggle " id="carritoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">🛒 </h4>
+                      <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="carritoDropdown" style="width: 250px;">
+                        <li><ul id="lista-carrito" class="list-unstyled mb-2"></ul></li>
+                        <li><p class="fw-bold">Total: S/ 0.00</p></li>
+                        <li><a href="zonapago.html" class="btn btn-success w-100">Pagar</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -45,7 +48,7 @@
             <source src="videos/VideoRelojLujoso4.mp4" type="video/mp4">
         </video>
         <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
-            <h1 class="display-5 fw-bold text-dark ">Productos de Calidad</h1>
+            <h1 class="display-5 fw-bold ">Productos de Calidad</h1>
         </div>
     </section>
 
