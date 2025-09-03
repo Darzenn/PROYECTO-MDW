@@ -8,38 +8,38 @@
     <title>Tienda de Relojes</title>
     <meta name="description" content="La mejor tienda en línea para comprar relojes de alta calidad.">
     <meta name="keywords" content="reloj, moda, venta, relojería, tienda en línea">
-    <link rel="stylesheet" href="estiloss/estilosPrinciiipal.css">
+    <link rel="stylesheet" href="estiloss/estilosPrincipal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
-        <!-- <div>
-                <img src="imagenes/balanza de oro.png" alt=""/>
-                 
-            </div> -->
+
 
         <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top m-0 p-0">
             <div class="container-fluid bg-dark bg-gradient">
-                <a class="navbar-brand text-white" href="#">
+                <a class="navbar-brand text-white d-flex align-items-center" href="#">
+                    <img src="imagenes/balanza de oro.png" alt="Logo" width="40" class="me-2">
                     <h1>VALLOIR</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarNav">
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav ms-auto ">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#quien-somos">Quienes
-                                somos</a>
-                        </li>
+                            <a class="nav-link text-white" aria-current="page" href="#quien-somos">Quienes somos</a></li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#productos">Productos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#footer">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="login.html">Iniciar sesion</a>
                         </li>
                     </ul>
 
@@ -52,36 +52,19 @@
 
     <main class="m-0 p-0 pt-5">
 
-        <!-- <section >
-                <video autoplay muted loop playsinline id="videoFondo">
+
+            <section class="position relative">
+                <video autoplay muted loop playsinline class="w-100" style="object-fit: cover; height: 100vh;">
                     <source src="videos/videoRelojLujoso.mp4" type="video/mp4">
                     Your browser does not support the <code>video</code> tag.
-                    <div >content</div>
+                    <div class="overlay">content</div>
                 </video>
 
-                <div >
-                    <h1>Valloir</h1>
+                <div class="text-center text-white translate-middle position-absolute top-50 start-50">
+                    <h1 class="display-3 fw-bold">Valloir</h1>
                     <p>Tradición que le da valor al tiempo.</p>
                 </div>
-                
-                
-            </section> -->
-
-        <!-- AAAAAAAAAAAAAAAAAAAA -->
-
-        <section class="position-relative vh-100 overflow-hidden m-0 p-0">
-            <video autoplay muted loop playsinline id="videoFondo"
-                class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
-                <source src="videos/videoRelojLujoso.mp4" type="video/mp4">
-                Tu navegador no soporta el <code>video</code> tag.
-                <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
-                <div
-                    class="d-flex flex-column justify-content-center align-items-center text-white position-relative h-100">
-                    <h1 class="display-3 fw-bold">Valloir</h1>
-                    <p class="lead">Tradición que le da valor al tiempo.</p>
-                </div>
-
-        </section>
+            </section>
 
 
         <section id="quien-somos">
@@ -99,21 +82,6 @@
                 </p>
             </div>
         </section>
-
-
-
-        <!--  <section >
-                <video autoplay muted loop playsinline id="videoFondo">
-                    <source src="videos/VideoRelojLujoso2.mp4" type="video/mp4">
-                    Your browser does not support the <code>video</code> tag.
-                </video>
-
-                <div >
-                    <h1>Valloir</h1>
-                    <p>No vendemos relojes, entregamos legado.</p>
-                </div>
-            </section> -->
-
 
         <section class="position-relative vh-100 overflow-hidden">
 

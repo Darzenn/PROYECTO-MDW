@@ -14,31 +14,32 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
         crossorigin="anonymous">
 </head>
-
+<div></div>
 <body>
   <main>
-    <section class="video-fondo">
+    <section class="video-fondo ">
       <video autoplay muted loop playsinline id="videoFondo">
         <source src="videos/VideoRelojLujoso3.mp4" type="video/mp4">
         Tu navegador no soporta el tag <code>video</code>.
       </video>
 
       <div class="capa-oscura"></div>
+      
 
-      <div class="container text-white shadow-lg rounded p-4">
-        <!-- Logo -->
+      <div class="container text-white shadow-md rounded p-4">
+
         <div class="logo mb-3">
           <img src="imagenes/balanza de oro.png" alt="Logo" />
           <h1 class="fw-bold">VALLOIR</h1>
         </div>
 
-        <!-- Tabs -->
+
         <div class="tabs mb-4">
           <div class="tab active" id="login-tab">Iniciar Sesión</div>
           <div class="tab" id="register-tab">Registrarse</div>
         </div>
 
-        <!-- Formulario Login -->
+        <!-- loginnn -->
         <form id="login-form" class="active" action="/login" method="POST" novalidate>
           <div class="mb-3">
             <label for="login-username" class="form-label">Usuario</label>
@@ -55,7 +56,7 @@
           <div id="login-message" class="alert alert-danger mt-3 d-none"></div>
         </form>
 
-        <!-- Formulario Registro -->
+        <!--  Registro -->
         <form id="register-form" action="/register" method="POST" novalidate>
           <div class="mb-3">
             <label for="register-username" class="form-label">Usuario</label>
@@ -82,11 +83,12 @@
           <div id="register-message" class="alert alert-danger mt-3 d-none"></div>
         </form>
 
-        <!-- Mensaje de éxito -->
+
         <div id="success-message" class="alert alert-success mt-3 d-none">
           Usuario registrado con éxito. Por favor, inicia sesión.
         </div>
       </div>
+
     </section>
   </main>
 

@@ -112,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    actualizarCarrito(); // Mostrar el carrito desde el inicio
+    actualizarCarrito(); 
 
-    // ZONA DE PAGO
+
     if (window.location.pathname.includes("zonapago.html")) {
         const listaProductos = document.getElementById("lista-productos");
         const totalFinal = document.getElementById("total-final");
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
 
-        // Mostrar productos del carrito
+
         let total = 0;
         carritoGuardado.forEach(item => {
             const li = document.createElement("li");
@@ -145,13 +145,13 @@ document.addEventListener("DOMContentLoaded", () => {
             const cupon = document.getElementById("cupon").value.trim().toUpperCase();
             const cvv = document.getElementById("cvv").value.trim();
 
-            // Validaciones básicas
+
             if (!nombre || !email || !tarjeta || !mes || !anio || !cvv) {
                 alert("Por favor, completa todos los campos.");
                 return;
             }
 
-            // Descuento
+
             let descuento = 0;
             let mensajeCupon = "";
 
@@ -183,14 +183,14 @@ document.addEventListener("DOMContentLoaded", () => {
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         if (scrollTop > lastScrollTop) {
-            // Scroll hacia abajo -> ocultar
-            header.style.top = "-100px"; // ajusta según la altura de tu header
+
+            header.style.top = "-100px"; 
         } else {
-            // Scroll hacia arriba -> mostrar
+
             header.style.top = "0";
         }
 
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
     });
 
 });
