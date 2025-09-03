@@ -1,153 +1,93 @@
-
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #111;
-    margin: 0;
-    padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #111;
+  margin: 0;
+  padding: 0;
 }
 
 .video-fondo {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #videoFondo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .capa-oscura {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad si deseas */
-    z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .logo h1 {
-    margin: 0;
-    font-size: 2rem;
-    animation: mover-derecha 1s ease-out;
-    font-family: Bodoni MT;
+  margin: 0;
+  font-size: 2rem;
+  animation: mover-derecha 1s ease-out;
+  font-family: Bodoni MT;
 }
 
 .logo img {
-    width: 50px; /* ajusta según el tamaño de tu logo */
-    height: auto;
+  width: 10px;
+  height: auto;
 }
 
 .container {
-    position: relative;
-    z-index: 3;
-    color: white;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
-    backdrop-filter: blur(5px); /* Opcional: desenfoque detrás del contenido */
-    background-color: rgba(0, 0, 0, 0.4); /* Opcional: fondo semitransparente */
-    border-radius: 10px;
+  position: relative;
+  z-index: 3;
+  max-width: 300px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Tabs personalizados */
 .tabs {
-    display: flex;
-    margin-bottom: 20px;
-    cursor: pointer;
+  display: flex;
+  cursor: pointer;
 }
 
 .tab {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    border-bottom: 2px solid transparent;
-    font-weight: bold;
-    color: #eaeaea;
-    user-select: none;
-    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  color: #eaeaea;
+  user-select: none;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 .tab.active {
-    border-bottom-color: #BFA36F;
-    color: #BFA36F;
+  border-bottom-color: #BFA36F;
+  color: #BFA36F;
 }
 
+/* Formularios */
 form {
-    display: none;
+  display: none;
 }
 
 form.active {
-    display: block;
-}
-
-input[type="text"], input[type="password"], input[type="email"] {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0 15px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-input:focus {
-    outline: none;
-    border-color: #BFA36F;
-    box-shadow: 0 0 4px #BFA36F;
-}
-
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #BFA36F;
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #e0a800;
-}
-
-label {
-    font-size: 14px;
-    color: #eaeaea;
-}
-
-.message {
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 6px;
-    text-align: center;
-    font-weight: bold;
-    display: none;
-}
-
-.success-message {
-    background-color: #dff0d8;
-    color: #3c763d;
-}
-
-.error-message {
-    background-color: #f2dede;
-    color: #a94442;
+  display: block;
 }
