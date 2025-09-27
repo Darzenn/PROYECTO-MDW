@@ -10,4 +10,9 @@ public class Controlador {
     public String mostrarIndex() {
         return "index";
     }
+
+    @GetMapping("/productos")
+    public String mostrarProductos() {
+        return "productos";
+    }
 }
