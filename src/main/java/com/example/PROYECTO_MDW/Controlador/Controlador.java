@@ -15,4 +15,11 @@ public class Controlador {
     public String mostrarProductos() {
         return "productos";
     }
+
+    @GetMapping("/login")
+    public String mostrarLogin() {
+        return "login";
+    }
+
+    
 }
