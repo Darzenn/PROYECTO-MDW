@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login / Registro</title>
+
+  <!-- CSS personalizado -->
+  <link href="estiloss/login.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+        crossorigin="anonymous">
+</head>
+<div></div>
+<body>
+  <main>
+    <section class="video-fondo ">
+      <video autoplay muted loop playsinline id="videoFondo">
+        <source src="videos/VideoRelojLujoso3.mp4" type="video/mp4">
+        Tu navegador no soporta el tag <code>video</code>.
+      </video>
+
+      <div class="capa-oscura"></div>
+      
+
+      <div class="container text-white shadow-md rounded p-4">
+
+        <div class="logo mb-3">
+          <img src="imagenes/balanza de oro.png" alt="Logo" />
+          <h1 class="fw-bold">VALLOIR</h1>
+        </div>
+
+
+        <div class="tabs mb-4">
+          <div class="tab active" id="login-tab">Iniciar Sesión</div>
+          <div class="tab" id="register-tab">Registrarse</div>
+        </div>
+
+        <!-- loginnn -->
+        <form id="login-form" class="active" action="/login" method="POST" novalidate>
+          <div class="mb-3">
+            <label for="login-username" class="form-label">Usuario</label>
+            <input type="text" class="form-control" id="login-username" name="username" required autocomplete="username" />
+          </div>
+
+          <div class="mb-3">
+            <label for="login-password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="login-password" name="password" required autocomplete="current-password" />
+          </div>
+
+          <button type="submit" class="btn btn-warning w-100 fw-bold">Entrar</button>
+
+          <div id="login-message" class="alert alert-danger mt-3 d-none"></div>
+        </form>
+
+        <!--  Registro -->
+        <form id="register-form" action="/register" method="POST" novalidate>
+          <div class="mb-3">
+            <label for="register-username" class="form-label">Usuario</label>
+            <input type="text" class="form-control" id="register-username" name="username" required autocomplete="username" />
+          </div>
+
+          <div class="mb-3">
+            <label for="register-email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="register-email" name="email" required autocomplete="email" />
+          </div>
+
+          <div class="mb-3">
+            <label for="register-password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="register-password" name="password" required autocomplete="new-password" />
+          </div>
+
+          <div class="mb-3">
+            <label for="register-password2" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="register-password2" name="password2" required autocomplete="new-password" />
+          </div>
+
+          <button type="submit" class="btn btn-warning w-100 fw-bold">Crear Cuenta</button>
+
+          <div id="register-message" class="alert alert-danger mt-3 d-none"></div>
+        </form>
+
+
+        <div id="success-message" class="alert alert-success mt-3 d-none">
+          Usuario registrado con éxito. Por favor, inicia sesión.
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="scripts JS/login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+          crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Relojes</title>
+    <meta name="description" content="La mejor tienda en línea para comprar relojes de alta calidad.">
+    <meta name="keywords" content="reloj, moda, venta, relojería, tienda en línea">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- NO BORRAR SON LOS ICONOS DE BOOTSTRAP! -->
+
+</head>
+
+<body>
+    <header>
+
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-body-tertiary fixed-top m-0 p-0">
+            <div class="container-fluid bg-dark">
+                <a class="navbar-brand text-white d-flex align-items-center" href="#">
+                    <img src="imagenes/balanza de oro.png" alt="Logo" width="40" class="me-2">
+                    <h1>VALLOIR</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="#quien-somos">Quienes somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#productos">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#footer">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" data-bs-toggle="modal"
+                                data-bs-target="#loginModal">Iniciar sesión</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Bienvenido a Valloir</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+
+                <!-- pestañas -->
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="authTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login"
+                                type="button" role="tab">Iniciar Sesión</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register"
+                                type="button" role="tab">Registrarse</button>
+                        </li>
+                    </ul>
+
+                    <!-- Contenido de pestañas -->
+                    <div class="tab-content pt-3">
+
+                        <!-- Login -->
+                        <div class="tab-pane fade show active" id="login" role="tabpanel">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-dark w-100">Ingresar</button>
+                            </form>
+                        </div>
+
+                        <!-- Registro -->
+                        <div class="tab-pane fade" id="register" role="tabpanel">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="registerName" class="form-label">Nombre completo</label>
+                                    <input type="text" class="form-control" id="registerName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="registerPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Registrarse</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main class="m-0 p-0 pt-5">
+
+        <section class="position-relative vh-100 overflow-hidden">
+
+            <div>
+                <video autoplay muted loop playsinline id="videoFondo"
+                    class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                    <source src="videos/videoRelojLujoso.mp4" type="video/mp4">
+                    Your browser does not support the <code>video</code> tag.
+                    <div class="overlay">content</div>
+                </video>
+            </div>
+
+            <div class="text-center text-white translate-middle position-absolute top-50 start-50">
+                <h1 class="display-3 fw-bold">Valloir</h1>
+                <p>Tradición que le da valor al tiempo.</p>
+            </div>
+        </section>
+
+
+        <section id="quien-somos">
+            <div class="container p-5 lead text-center">
+                <h1 style="color: #BFA36F ">Quienes somos</h1>
+                <p style="text-align: justify;">
+                    En Valloir, el tiempo no solo se mide, se honra. Somos una casa especializada en relojería de alta
+                    gama, donde la precisión francesa se encuentra con la elegancia atemporal. Nuestra pasión por el
+                    arte del
+                    reloj va más allá de las agujas: seleccionamos piezas exclusivas que combinan tradición, innovación
+                    y distinción. Desde nuestros inicios, Valloir ha sido sinónimo de excelencia, ofreciendo a nuestros
+                    clientes una
+                    experiencia única que refleja el lujo, la sofisticación y el carácter de cada segundo vivido.
+                </p>
+            </div>
+        </section>
+
+        <section class="position-relative vh-100 overflow-hidden">
+
+            <div>
+                <video autoplay muted loop playsinline id="videoFondo"
+                    class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
+                    <source src="videos/VideoRelojLujoso2.mp4" type="video/mp4">
+                    Tu navegador no soporta el <code>video</code> tag.
+                </video>
+            </div>
+
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+            <div class="text-center text-white translate-middle position-absolute top-50 start-50">
+                <h1 class="display-3 fw-bold">Valloir</h1>
+                <p>No vendemos relojes, entregamos legado.</p>
+            </div>
+
+        </section>
+
+
+        <div class="container lead text-center p-5">
+            <h1 style="color: #BFA36F">Productos Destacados</h1>
+
+            <p id="nuestro-producto">
+                Aquí puedes encontrar una variedad de relojes de alta calidad.<br>
+                El mejor conjunto de relojes de la más alta calidad.
+            </p>
+        </div>
+
+
+        <!-- TABLERO DE PRODUCTOS -->
+        <div class="container mt-5" id="productos">
+            <div class="row d-flex align-items-stretch">
+
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/Reloj_Deportivo.png" class="card-img-top" alt="Reloj Deportivo">
+                        <div class="card-body">
+                            <span class="badge text-bg-success">MÁS VENDIDO</span>
+                            <h4 class="card-tittle">Reloj Deportivo</h4>
+                            <p class="cardt-text fw-bold">$50</p>
+                            <p class="cardt-text">Resistente al agua, cronómetro</p>
+                            <div class="cardt-text">★★★★☆ <span>(42)</span></div>
+                            <button class="btn btn-warning w-50"
+                                onclick="window.open('productos.html', '_blank')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/Reloj_Clasico.png" class="card-img-top" alt="Reloj Clásico">
+                        <div class="card-body">
+                            <span class="badge text-bg-success">NUEVO</span>
+                            <h4 class="card-text">Reloj Clásico</h4>
+                            <p class="card-text fw-bold">$80</p>
+                            <p class="card-text">Correa de cuero, elegante</p>
+                            <div class="card-text">★★★★★ <span>(18)</span></div>
+                            <button class="btn btn-warning w-50"
+                                onclick="window.open('productos.html', '_blank')">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/Reloj_Inteligente.png" class="card-img-top" alt="Reloj Inteligente">
+                        <div CLASS="card-body">
+                            <span class="badge text-bg-success">OFERTA</span>
+                            <h4 class="card-text">Reloj Inteligente</h4>
+                            <p class="card-text fw-bold">$150</p>
+                            <p class="card-text">Smartwatch, notificaciones</p>
+                            <div class="card-text">★★★★☆ <span>(59)</span></div>
+                            <button class="btn btn-warning w-50"
+                                onclick="window.open('productos.html', '_blank')">Comprar</button>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/reloj correa_Acero.png" class="card-img-top" alt="Reloj con Correa de Acero">
+                        <div class="card-body">
+                            <span class="badge text-bg-success">DESTACADO</span>
+                            <h4 class="card-text">Reloj con Correa de Acero</h4>
+                            <p class="card-text fw-bold">$120</p>
+                            <p class="card-text">Sumergible, resistente</p>
+                            <div class="card-text">★★★★☆ <span>(27)</span></div>
+                            <button class="btn btn-warning w-50"
+                                onclick="window.open('productos.html', '_blank')">Comprar</button>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="container text-center p-5">
+
+                    <button class="btn btn-outline-warning btn-lg" onclick="window.open('productos.html', '_blank')">
+                        Más Productos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <section id="promocion" class="bg-dark text-white ">
+            <div class="container text-center p-5 ">
+                <h2>Encuentra el reloj ideal para esta nueva temporada de verano</h2>
+                <p>Depotividad, elegancia, estatus, profesionalismo <br> ¡Elige lo mejor!</p>
+                <h4>Mucho más que dar la hora... otorga estatus, otorga experiencias.</h4>
+
+                <video autoplay muted loop class="ratio ratio-16x9">
+                    <source src="videos/The Clock Is Ticking....mp4" type="video/mp4" />
+                    Tu navegador no soporta la etiqueta <code>video</code>.
+                </video>
+
+            </div>
+        </section>
+
+        <div class="container text-center p-5 " id="promocion">
+            <h3>¿Alguna duda o consulta?</h3>
+            <p>contacta con nuestra atencion al cliente de forma directa</p>
+
+
+            <button type="button" class="btn btn-outline-warning btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Contactar
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade text-start" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Atención al Cliente</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <form action="procesar_formulario.php" method="POST">
+
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label text-start">Nombre completo</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="correo" class="form-label text-start">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="correo" name="correo" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label text-start">Teléfono</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono"
+                                        placeholder="Ej: +51 987654321">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="tipo" class="form-label text-start">Tipo de consulta</label>
+                                    <select class="form-select" id="tipo" name="tipo" required>
+                                        <option value="">Seleccione...</option>
+                                        <option value="informacion">Información general</option>
+                                        <option value="soporte">Soporte técnico</option>
+                                        <option value="reclamo">Reclamo</option>
+                                        <option value="otros">Otros</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="mensaje" class="form-label text-start">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                                        required></textarea>
+                                </div>
+
+
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer id="footer" class="bg-dark text-white text-center py-1">
+        <div class="row container mx-auto py-4">
+            <div class="col">
+                <h4 class="fw-bold py-1">CANAL DE ATENCION</h4>
+                <p><i class="bi bi-envelope-open me-2"></i> ventas@valloirtime.com</p>
+                <p><i class="bi bi-headset me-2"></i> soporte@valloirtime.com</p>
+                <p><i class="bi bi-telephone me-2"></i> 987654321 / 912345678</p>
+            </div>
+
+            <div class="col">
+                <h4 class="fw-bold py-1">OTROS ENLACES</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#" class=" text-decoration-none link-light">Preguntas frecuentes</a></li>
+                    <li><a href="#" class="text-decoration-none link-light">Términos y condiciones</a></li>
+                    <li><a href="#" class="text-decoration-none link-light">Cambios y devoluciones</a></li>
+                    <li><a href="#" class="text-decoration-none link-light">Servicio Técnico</a></li>
+                    <li><a href="#" class="text-decoration-none link-light">Libro de reclamaciones</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-light my-4">
+        <p class="fw-bold">&copy; 2025 Marca de Relojes Valloir. Todos los derechos reservados.</p>
+    </footer>
+
+
+
+    <!-- <button id="icono-carrito" class="icono-carrito" title="Ver carrito">🛒</button> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+<script src="scripts JS/compra.js" type="text/javascript"></script>
+
+</html>

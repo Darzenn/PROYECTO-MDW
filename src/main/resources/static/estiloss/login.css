@@ -1,0 +1,95 @@
+/* ================================ */
+/*       Estilos del Modal Login    */
+/* ================================ */
+
+/* Caja del modal */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    border: 2px solid #BFA36F;
+    background: linear-gradient(135deg, #2a2d44, #1a1c2c); /* Fondo elegante oscuro */
+    color: #fff; /* Texto claro sobre fondo oscuro */
+}
+
+/* Encabezado */
+.modal-header {
+    background: linear-gradient(135deg, #1a1c2c, #2a2d44);
+    color: #fff;
+    border-bottom: none;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Tabs */
+.nav-tabs {
+    border-bottom: 2px solid #444;
+    justify-content: center;
+}
+
+.nav-tabs .nav-link {
+    color: #ccc;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: all 0.3s;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #BFA36F;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #777;
+    padding: 10px;
+    background-color: #2e2e3e; /* gris oscuro */
+    color: #fff;
+    transition: 0.3s;
+}
+
+.form-control::placeholder {
+    color: #bbb;
+}
+
+.form-control:focus {
+    border-color: #BFA36F;
+    background-color: #383850;
+    box-shadow: 0 0 8px rgba(191,163,111,0.5);
+}
+
+/* Botón de login */
+.btn-dark {
+    background-color: #1a1c2c;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-dark:hover {
+    background-color: #BFA36F;
+    color: #fff;
+}
+
+/* Botón de registro */
+.btn-success {
+    background-color: #BFA36F;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    transition: all 0.3s;
+    color: #111;
+}
+
+.btn-success:hover {
+    background-color: #1a1c2c;
+    color: #fff;
+}

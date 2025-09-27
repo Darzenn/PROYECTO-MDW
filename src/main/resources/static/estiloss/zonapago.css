@@ -1,0 +1,199 @@
+
+:root {
+    --negro: #111111;
+    --dorado: #D4AF37;
+    --gris-suave: #eaeaea;
+    --blanco: #ffffff;
+    --azul-elegante: #1a1c2c;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--gris-suave);
+    color: var(--negro);
+}
+
+input:focus,
+select:focus,
+button:focus {
+    outline: 2px solid var(--dorado);
+    outline-offset: 2px;
+}
+
+
+.logo h1 {
+    margin: 0;
+    font-size: 2rem;
+    animation: mover-derecha 1s ease-out;
+    font-family: Bodoni MT;
+}
+
+@keyframes mover-derecha {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 50px; /* ajusta según el tamaño de tu logo */
+    height: auto;
+}
+
+header {
+    background-color: var(--azul-elegante);
+    color: var(--gris-suave);
+    font-family: Bodoni MT;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+main {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: var(--gris-suave);
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: Bodoni MT;
+    font-size: 34px;
+}
+
+#lista-productos{
+    color: var(--blanco)
+}
+
+#resumenPedido{
+    color: var(--blanco)
+}
+
+#resumen-carrito ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#resumen-carrito ul li {
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#total-final {
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-align: right;
+    color: var(--dorado);
+    margin-top: 10px;
+}
+
+form {
+    background-color: #1f1f1f;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 12px;
+    color: var(--gris-suave);
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: var(--blanco);
+    font-size: 1rem;
+}
+
+form button {
+    margin-top: 20px;
+    background-color: var(--dorado);
+    color: var(--negro);
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background-color: #c79c2a;
+}
+
+#mensaje-exito {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid green;
+    background-color: #1f3f1f;
+    color: #9ff59f;
+    border-radius: 8px;
+    text-align: center;
+}
+.fecha-expiracion {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.fecha-expiracion select {
+    padding: 6px;
+    font-size: 14px;
+}
+
+.video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#videoFondo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(0.4); /* oscurece un poco el video */
+}
+
+/* Añade un recorte interior para que el video solo se vea por los lados */
+
+
+
+
+@media (max-width: 480px) {
+    form {
+        padding: 20px;
+    }
+
+    .fecha-expiracion {
+        flex-direction: column;
+    }
+}

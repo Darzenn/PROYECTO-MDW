@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de Relojes - Valloir</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="estiloss/estilosPrincipal.css">
+    
+    <link rel="icon" href="favicon.ico" />
+</head>
+
+<body class="bg-light">
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid me-0">
+            <a class="navbar-brand ms-5 " href="index.html">
+                <img src="imagenes/balanza de oro.png" alt="Logo" width="40" class="me-2">
+                <span class="fw-bold">VALLOIR</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end ms-5" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#promocion">Promoción</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+                <div id="carrito-flotante" class="carrito-flotante ms-5">
+                    <h4 class="nav-link dropdown-toggle " id="carritoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">🛒 </h4>
+                      <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="carritoDropdown" style="width: 250px;">
+                        <li><ul id="lista-carrito" class="list-unstyled mb-2"></ul></li>
+                        <li><p class="fw-bold">Total: S/ 0.00</p></li>
+                        <li><a href="zonapago.html" class="btn btn-success w-100">Pagar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="position-relative">
+        <video autoplay muted loop playsinline class="w-100" style="height: 400px; object-fit: cover;">
+            <source src="videos/VideoRelojLujoso4.mp4" type="video/mp4">
+        </video>
+        <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+            <h1 class="display-5 fw-bold ">Productos de Calidad</h1>
+        </div>
+    </section>
+
+
+    <section id="productos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Nuestros Productos</h2>
+            <div class="row g-4">
+
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/Reloj_Deportivo.png" class="card-img-top" alt="Reloj Deportivo">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">MÁS VENDIDO</span>
+                            <h5 class="card-title">Reloj Deportivo</h5>
+                            <p class="text-muted mb-1">Resistente al agua, cronómetro</p>
+                            <p class="fw-bold">S/ 50</p>
+                            <div class="mb-2">★★★★☆ <span>(42)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/Reloj_Clasico.png" class="card-img-top" alt="Reloj Clásico" />
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">NUEVO</span>
+                            <h5 class="card-title">Reloj Clásico</h5>
+                            <p class="text-muted mb-1">Correa de cuero, elegante</p>
+                            <p class="fw-bold">S/ 80</p>
+                            <div class="mb-2">★★★★★ <span>(18)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/Reloj_Inteligente.png" class="card-img-top" alt="Reloj Inteligente" />
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">OFERTA</span>
+                            <h5 class="card-title">Reloj Inteligente</h5>
+                            <p class="text-muted mb-1">Smartwatch, notificaciones</p>
+                            <p class="fw-bold">S/ 150</p>
+                            <div class="mb-2">★★★★☆ <span>(59)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/reloj correa_Acero.png" class="card-img-top" alt="Reloj de Buceo" />
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">DESTACADO</span>
+                            <h5 class="card-title">Reloj con Correa de Acero</h5>
+                            <p class="text-muted mb-1">Sumergible, resistente</p>
+                            <p class="fw-bold">S/ 120</p>
+                            <div class="mb-2">★★★★☆ <span>(27)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/Reloj_Muñeca.png" class="card-img-top" alt="Reloj de Muñeca" />
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">NUEVO</span>
+                            <h5 class="card-title">Reloj de Muñeca</h5>
+                            <p class="text-muted mb-1">Comodo, resistente</p>
+                            <p class="fw-bold">S/ 150</p>
+                            <div class="mb-2">★★★★☆ <span>(10)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/Reloj_Digital.png" class="card-img-top" alt="Reloj Digital" />
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">NUEVO</span>
+                            <h5 class="card-title">Reloj Digital</h5>
+                            <p class="text-muted mb-1">Comodo, moderno</p>
+                            <p class="fw-bold">S/ 300</p>
+                            <div class="mb-2">★★★★☆ <span>(250)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/reloj mujer 1.png" class="card-img-top" alt="Reloj Deportivo" />
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">MÁS VENDIDO</span>
+                            <h5 class="card-title">Reloj para Damas</h5>
+                            <p class="text-muted mb-1">Resistente al agua, cronómetro</p>
+                            <p class="fw-bold">S/ 700</p>
+                            <div class="mb-2">★★★★☆ <span>(42)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/reloj mujer 2.png" class="card-img-top" alt="Reloj Deportivo" />
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">MÁS VENDIDO</span>
+                            <h5 class="card-title">Reloj Deportivo Femenino</h5>
+                            <p class="text-muted mb-1">Resistente al agua, cronómetro</p>
+                            <p class="fw-bold">S/ 600</p>
+                            <div class="mb-2">★★★★☆ <span>(42)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 col-lg-3 mt-5">
+                    <div class="card h-100">
+                        <img src="imagenes/reloj potaAuriculares.jpg" class="card-img-top" alt="Reloj Deportivo" />
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">MÁS VENDIDO</span>
+                            <h5 class="card-title">Reloj Porta Auriculares</h5>
+                            <p class="text-muted mb-1">Resistente al agua, cronómetro</p>
+                            <p class="fw-bold">S/ 849</p>
+                            <div class="mb-2">★★★★☆ <span>(42)</span></div>
+                            <button class="btn btn-warning w-100">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <section id="promocion" class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <h2>Encuentra el reloj ideal para esta nueva temporada</h2>
+            <p class="mb-3">Deportividad, elegancia, estatus, profesionalismo.<br>¡Elige lo mejor!</p>
+            <h5 class="mb-4">Mucho más que dar la hora... otorga estatus, otorga experiencias.</h5>
+            <video autoplay muted loop class="ratio ratio-16x9">
+                <source src="videos/The Clock Is Ticking....mp4" type="video/mp4" />
+                Tu navegador no soporta el video.
+            </video>
+        </div>
+    </section>
+
+
+    <section id="contacto" class="py-5">
+        <div class="container text-center">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes alguna duda o consulta? Escríbenos directamente.</p>
+            <a href="mailto:soporte@tiemponativo.com" class="btn btn-outline-primary">Haz Click Aquí</a>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-dark text-white text-center py-1">
+        <div class="row container mx-auto py-4">
+            <div class="col">
+                <h4 class="fw-bold py-1">CANAL DE ATENCION</h4>
+                <p><i class="bi bi-envelope-open me-2"></i> ventas@valloirtime.com</p>
+                <p><i class="bi bi-headset me-2"></i> soporte@valloirtime.com</p>
+                <p><i class="bi bi-telephone me-2"></i> 987654321 / 912345678</p>
+            </div>
+
+            <div class="col">
+                <h4 class="fw-bold py-1">OTROS ENLACES</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#" class=" text-decoration-none link-light">Preguntas frecuentes</a></li>
+                    <li><a href="#" class="text-decoration-none link-light">Términos y condiciones</a></li>
+                    <li><a href="#" class="text-decoration-none link-light">Cambios y devoluciones</a></li>
+                    <li><a href="#" class="text-decoration-none link-light">Servicio Técnico</a></li>
+                    <li><a href="#" class="text-decoration-none link-light">Libro de reclamaciones</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-light my-4">
+        <p class="fw-bold">&copy; 2025 Marca de Relojes Valloir. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
