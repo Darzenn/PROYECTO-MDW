@@ -1,12 +1,12 @@
-package com.example.PROYECTO_MDW.Controlador;
+package com.example.PROYECTO_MDW.Model;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Controlador {
+public class IndexController {
     
-    @GetMapping("/index")
+    @GetMapping("/")
     public String mostrarIndex() {
         return "index";
     }
@@ -16,9 +16,9 @@ public class Controlador {
         return "productos";
     }
 
-    @GetMapping("/loginzoun")
-    public String mostrarLogin() {
-        return "loginzoun";
+    @GetMapping("/register")
+    public String mostrarRegistro() {
+        return "registerzoun";
     }
 
     
