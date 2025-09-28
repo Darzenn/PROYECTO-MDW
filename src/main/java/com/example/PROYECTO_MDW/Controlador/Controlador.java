@@ -16,9 +16,9 @@ public class Controlador {
         return "productos";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/loginzoun")
     public String mostrarLogin() {
-        return "login";
+        return "loginzoun";
     }
 
     
