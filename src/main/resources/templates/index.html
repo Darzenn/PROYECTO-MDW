@@ -80,10 +80,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-
                         <!-- Formulario de login -->
                             <form th:action="@{/login}" method="POST" >
-
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Correo electrónico</label>
                                     <input type="email" class="form-control" id="email" name="email" required>
@@ -103,7 +101,6 @@
                             Usuario o contraseña incorrectos
                         </div>
 
-                        
                         <div th:if="${param.logout}" class="alert alert-success mt-3">
                             Has cerrado sesión correctamente
                         </div>  -->
@@ -381,7 +378,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+
 </body>
+
 
 <script src="scripts JS/compra.js" type="text/javascript"></script>
 

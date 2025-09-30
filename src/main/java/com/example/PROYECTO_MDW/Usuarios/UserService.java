@@ -10,25 +10,24 @@ public class UserService {
     private final List<User> listaUsuarios = new ArrayList<>();
 
     public UserService() {
-        listaUsuarios.add(new User("Admin", "admin@prueba.com", "123"));
+        listaUsuarios.add(new User("admin", "admin@prueba.com", "123"));
         listaUsuarios.add(new User("user", "usuario@prueba.com", "456"));
     }
 
-    public boolean regirstrarUsuario(User usuario) {
+    public boolean registrarUsuario(User usuario) {
         
         if (usuario.getNombre() == null || usuario.getNombre().isBlank() ||
             usuario.getEmail() == null || usuario.getEmail().isBlank() ||
             usuario.getPassword() == null || usuario.getPassword().isBlank()) {
-            System.out.println("Intento de registro fallido: Campos incompletos.");
             return false;
         }
         boolean emailExistente = listaUsuarios.stream().anyMatch(u -> u.getEmail().equals(usuario.getEmail()));
         if (emailExistente) {
-            System.out.println("Intento de registro fallido: el correo " + usuario.getEmail() + " ya existe."); 
+            System.out.println("El correo electrónico ya está registrado.");
             return false;
         } else {
             listaUsuarios.add(usuario);
-            System.out.println("Usuario registrado exitosamente: " + usuario.getEmail());
+            System.out.println("Usuario registrado exitosamente.");
             return true;
         }
     }

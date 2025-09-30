@@ -87,9 +87,6 @@
                   <div class="tab-content pt-3">
                           <!-- Login -->
                     <div class="tab-pane fade show active" id="login" role="tabpanel">
-                      <div th:if="${errorLogin}" class="alert alert-danger text-center" role="alert" th:text="${errorLogin}">
-                          Error de Correo o Contraseña.
-                      </div>
                         <form th:action="@{/login}" method="POST" class="text-dark" >
                           <div class="mb-3">
                             <label for="email" class="form-label">Correo electrónico</label>

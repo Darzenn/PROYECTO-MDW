@@ -21,7 +21,7 @@ public class AuthController {
     @PostMapping("/register")
     public String registrarUsuario(@ModelAttribute User user, RedirectAttributes ra) {
         
-        boolean registroExitoso = userService.regirstrarUsuario(user);
+        boolean registroExitoso = userService.registrarUsuario(user);
         
         if (registroExitoso) {
             ra.addFlashAttribute("registroExitosoFlag", true);
@@ -50,6 +50,7 @@ public class AuthController {
                                 Model model) {
         if (email == null || email.isBlank() || password == null || password.isBlank()) {
             model.addAttribute("errorLogin", "Por favor, ingresa tu correo y contraseña.");
+            System.out.println("INGRESAR CORREO Y CONTRASEÑA");
             return "index";
         }
         User usuario = userService.login(email, password);
@@ -58,6 +59,7 @@ public class AuthController {
             return "redirect:/";
         } else {
             model.addAttribute("errorLogin", "Correo o contraseña incorrecta.");
+            System.out.println("CORREO O CONTRASEÑA INCORRECTA");
             return "index";
         }
     }
