@@ -11,7 +11,7 @@ public class UserService {
 
     public UserService() {
         listaUsuarios.add(new User("Admin", "admin@prueba.com", "123"));
-        listaUsuarios.add(new User("user", "usuario@test.com", "456"));
+        listaUsuarios.add(new User("user", "usuario@prueba.com", "456"));
     }
 
     

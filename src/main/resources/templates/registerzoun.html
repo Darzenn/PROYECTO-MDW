@@ -36,53 +36,55 @@
             <div class="tab-pane fade show active" id="register" role="tabpanel">
               <div th:if="${errorRegistro}" class="alert alert-danger text-center" role="alert" th:text="${errorRegistro}">
                 Mensaje de error de validación.
-            </div>
+              </div>
               <form th:action="@{/register}" th:object="${user}" method="post" novalidate>
                 
-                <div class="mb-3">
-                  <label for="nombre" class="form-label">Usuario</label>
-                  <input type="text" class="form-control" id="nombre" name="nombre" th:field="*{nombre}" required>
-                </div>
+                  <div class="mb-3">
+                    <label for="nombre" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" th:field="*{nombre}" required>
+                  </div>
 
-                <div class="mb-3">
-                  <label for="email" class="form-label">Correo Electrónico</label>
-                  <input type="email" class="form-control" id="email" name="email" th:field="*{email}" required>
-                </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" th:field="*{email}" required>
+                  </div>
 
-                <div class="mb-3">
-                  <label for="password" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="password" name="password" th:field="*{password}" required>
-                </div>
-<!--
-                <div class="mb-3">
-                  <label for="register-password2" class="form-label">Confirmar Contraseña</label>
-                  <input type="password" class="form-control" id="register-password2" name="password2"  required>
-                </div>
-                -->
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" th:field="*{password}" required>
+                  </div>
+  <!--
+                  <div class="mb-3">
+                    <label for="register-password2" class="form-label">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" id="register-password2" name="password2"  required>
+                  </div>
+                  -->
 
-                <button type="submit" class="btn btn-warning w-100 fw-bold">Crear Cuenta</button>
-                <p class="text-center mt-3">
-                    <!-- <a th:href="@{/}">Volver a la página principal para iniciar sesión</a> -->
-                    <a class=" text-dark" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-                                    Iniciar sesión
-                                </a>
-                </p>
-                <div id="register-message" class="alert alert-danger mt-3 d-none"></div>
+                  <button type="submit" class="btn btn-warning w-100 fw-bold">Crear Cuenta</button>
+                  <p class="text-center mt-3"> Ya tienes una cuenta?
+                      <!-- <a th:href="@{/}">Volver a la página principal para iniciar sesión</a> -->
+                      <a class=" text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                      Iniciar sesión
+                                  </a>
+                  </p>
+                  <div id="register-message" class="alert alert-danger mt-3 d-none"></div>
               </form>
             </div>
-            
           </div>
 
           <!-- Mensaje Éxito -->
           
           
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+
+        </div>
+
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
 
 
                 <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Bienvenido a Valloir</h5>
+                    <h5 class="modal-title text-dark" id="loginModalLabel">Bienvenido a Valloir</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Cerrar"></button>
                 </div>
@@ -93,18 +95,18 @@
 
                 <!-- pestañas -->
                 <div class="modal-body">
-                    <div th:if="${errorLogin}" class="alert alert-danger text-center" role="alert" th:text="${errorLogin}">
-                        Error de Correo o Contraseña.
-                    </div>
+
 
 
                     <!-- Contenido de pestañas -->
                     <div class="tab-content pt-3">
 
                         <!-- Login -->
-                        <div class="tab-pane fade show active" id="login" role="tabpanel">
-                            
-                            <form th:action="@{/login}" method="POST" >
+                  <div class="tab-pane fade show active" id="login" role="tabpanel">
+                    <div th:if="${errorLogin}" class="alert alert-danger text-center" role="alert" th:text="${errorLogin}">
+                        Error de Correo o Contraseña.
+                    </div>
+                            <form th:action="@{/login}" method="POST" class="text-dark" >
 
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Correo electrónico</label>
@@ -126,7 +128,6 @@
             </div>
         </div>
     </div>
-        </div>
       </div>
     </section>
   </main>
