@@ -7,14 +7,13 @@ import java.util.List;
 @Service
 public class UserService {
     
-        private final List<User> listaUsuarios = new ArrayList<>();
+    private final List<User> listaUsuarios = new ArrayList<>();
 
     public UserService() {
         listaUsuarios.add(new User("Admin", "admin@prueba.com", "123"));
         listaUsuarios.add(new User("user", "usuario@prueba.com", "456"));
     }
 
-    
     public boolean regirstrarUsuario(User usuario) {
         
         if (usuario.getNombre() == null || usuario.getNombre().isBlank() ||
@@ -23,10 +22,7 @@ public class UserService {
             System.out.println("Intento de registro fallido: Campos incompletos.");
             return false;
         }
-        
-        
         boolean emailExistente = listaUsuarios.stream().anyMatch(u -> u.getEmail().equals(usuario.getEmail()));
-        
         if (emailExistente) {
             System.out.println("Intento de registro fallido: el correo " + usuario.getEmail() + " ya existe."); 
             return false;
@@ -37,7 +33,6 @@ public class UserService {
         }
     }
 
-    
     public User login(String email, String password) {
         return listaUsuarios.stream()
                 .filter(u -> u.getEmail().equals(email) && u.getPassword().equals(password))

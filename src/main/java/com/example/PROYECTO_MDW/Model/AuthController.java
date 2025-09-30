@@ -24,24 +24,18 @@ public class AuthController {
         boolean registroExitoso = userService.regirstrarUsuario(user);
         
         if (registroExitoso) {
-            
             ra.addFlashAttribute("registroExitosoFlag", true);
             return "redirect:/";
         } else {
-            
             String errorMsg;
-            
             if (user.getNombre() == null || user.getNombre().isBlank() ||
                 user.getEmail() == null || user.getEmail().isBlank() ||
                 user.getPassword() == null || user.getPassword().isBlank()) {
                     errorMsg = "Todos los campos son obligatorios. Por favor, llénalos.";
-                    
             } else {
                     errorMsg = "El correo electrónico ya está registrado. Intenta con otro.";
                     
             }
-            
-            
             ra.addFlashAttribute("errorRegistro", errorMsg);
             ra.addFlashAttribute("user", user);
             return "redirect:/register";
@@ -54,26 +48,19 @@ public class AuthController {
                                 @RequestParam String password,
                                 HttpSession session,
                                 Model model) {
-        
-        // Validación de datos vacíos en Login
         if (email == null || email.isBlank() || password == null || password.isBlank()) {
             model.addAttribute("errorLogin", "Por favor, ingresa tu correo y contraseña.");
             return "index";
         }
-
         User usuario = userService.login(email, password);
-
         if (usuario != null) {
-
             session.setAttribute("usuarioLogeado", usuario);
             return "redirect:/";
         } else {
-
             model.addAttribute("errorLogin", "Correo o contraseña incorrecta.");
             return "index";
         }
     }
-
 
     @GetMapping("/logout")
     public String cerrarSesion(HttpSession session) {
