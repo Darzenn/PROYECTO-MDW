@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -19,81 +19,94 @@
     <header>
 
 
+        <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-body-tertiary fixed-top m-0 p-0">
             <div class="container-fluid bg-dark">
                 <a class="navbar-brand text-white d-flex align-items-center" href="#">
                     <img src="imagenes/balanza de oro.png" alt="Logo" width="40" class="me-2">
                     <h1>VALLOIR</h1>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav ms-auto ">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="#quien-somos">Quienes somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#productos">Productos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#footer">Contacto</a>
-                        </li>
-                        <li class="nav-item">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="#quien-somos">Quienes somos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#productos">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#footer">Contacto</a></li>
+
+                        <!-- Mostrar solo si NO está logeado -->
+                        <li class="nav-item" sec:authorize="isAnonymous()">
                             <a class="nav-link text-white" href="#" data-bs-toggle="modal"
                                 data-bs-target="#loginModal">Iniciar sesión</a>
                         </li>
+
+                        <!-- Mostrar solo si SÍ está logeado -->
+                        <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                                data-bs-toggle="dropdown">
+                                Bienvenido, <span sec:authentication="name"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
                     </ul>
-
-
                 </div>
             </div>
         </nav>
-    </header>
 
+        <!-- Modal de Login -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Iniciar Sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
 
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
+                        <!-- Formulario de login -->
+                        <form th:action="@{/doLogin}" method="post">
 
+                            <!-- Campo usuario/email -->
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Correo Electrónico</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
 
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Bienvenido a Valloir</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Cerrar"></button>
-                </div>
+                            <!-- Campo contraseña -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
 
-                <!-- pestañas -->
-                <div class="modal-body">
+                            <!-- Token CSRF (obligatorio si no lo desactivaste) -->
+                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 
+                            <!-- Enlace a registro -->
+                            <p class="mt-2">¿No tienes cuenta? <a th:href="@{/register}">Regístrate</a></p>
 
-                    <!-- Contenido de pestañas -->
-                    <div class="tab-content pt-3">
+                            <!-- Botón -->
+                            <button type="submit" class="btn btn-warning w-100">Ingresar</button>
+                        </form>
 
-                        <!-- Login -->
-                        <div class="tab-pane fade show active" id="login" role="tabpanel">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="loginEmail" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="loginEmail" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="loginPassword" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="loginPassword" required>
-                                </div>
-                                <div class="mb-3">
-                                    <p>¿No tienes una cuenta? <a href="/register" class="link-secondary">Regístrate</a></p>
-                                </div>
-                                <button type="submit" class="btn btn-dark w-100">Ingresar</button>
-                            </form>
+                        <!-- Mensaje de error en caso de login fallido -->
+                        <div th:if="${param.error}" class="alert alert-danger mt-3">
+                            Usuario o contraseña incorrectos
                         </div>
 
+                        <!-- Mensaje en caso de logout -->
+                        <div th:if="${param.logout}" class="alert alert-success mt-3">
+                            Has cerrado sesión correctamente
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+
+    </header>
 
 
     <main class="m-0 p-0 pt-5">
@@ -258,7 +271,8 @@
             <p>contacta con nuestra atencion al cliente de forma directa</p>
 
 
-            <button type="button" class="btn btn-outline-warning btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-outline-warning btn-lg" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
                 Contactar
             </button>
 

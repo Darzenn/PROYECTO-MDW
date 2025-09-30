@@ -1,19 +1,19 @@
 package com.example.PROYECTO_MDW.Usuarios;
 
-public class user {
+public class Usuario {
     private String nombre;
     private String email;
     private String password;
 
-    public user() {
-    }
+    public Usuario() {}
 
-    public user(String nombre, String email, String password) {
+    public Usuario(String nombre, String email, String password) {
         this.nombre = nombre;
         this.email = email;
         this.password = password;
     }
 
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -34,5 +34,4 @@ public class user {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }
