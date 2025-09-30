@@ -1,13 +1,13 @@
 package com.example.PROYECTO_MDW.Usuarios;
 
-public class Usuario {
+public class User {
     private String nombre;
     private String email;
     private String password;
 
-    public Usuario() {}
+    public User() {}
 
-    public Usuario(String nombre, String email, String password) {
+    public User(String nombre, String email, String password) {
         this.nombre = nombre;
         this.email = email;
         this.password = password;

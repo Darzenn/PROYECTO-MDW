@@ -1,44 +1,33 @@
 package com.example.PROYECTO_MDW.Model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import com.example.PROYECTO_MDW.Usuarios.User;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import com.example.PROYECTO_MDW.Usuarios.Usuario;
-import com.example.PROYECTO_MDW.Segurity.CustomUserDetailsService;
 
 @Controller
 public class IndexController {
-
-    @Autowired
-    private CustomUserDetailsService customUserDetailsService;
-
-    // Página principal
+    
     @GetMapping("/")
     public String mostrarIndex() {
-        return "index"; // index.html
+        return "index";
     }
 
-    // Página de productos
     @GetMapping("/productos")
     public String mostrarProductos() {
-        return "productos"; // productos.html
+        return "productos";
     }
-
-    // Página de registro
+    
     @GetMapping("/register")
     public String mostrarRegistro(Model model) {
-        model.addAttribute("user", new Usuario()); // 👈 ahora usa Usuario
-        return "register"; // tu plantilla de registro
+        model.addAttribute("user", new User());
+        return "registerzoun";
     }
 
-    // Procesar registro
-    @PostMapping("/register")
-    public String procesarRegistro(@ModelAttribute("user") Usuario usuario, Model model) {
-        customUserDetailsService.addUser(usuario);
-        return "redirect:/"; // después de registrar vuelve al index
+    @GetMapping("/zonapago")
+    public String mostrarZonaPago() {
+        return "zonapago";
     }
+
+    
 }

@@ -26,32 +26,47 @@
                     <img src="imagenes/balanza de oro.png" alt="Logo" width="40" class="me-2">
                     <h1>VALLOIR</h1>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link text-white" href="#quien-somos">Quienes somos</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#productos">Productos</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#footer">Contacto</a></li>
-
-                        <!-- Mostrar solo si NO está logeado -->
-                        <li class="nav-item" sec:authorize="isAnonymous()">
-                            <a class="nav-link text-white" href="#" data-bs-toggle="modal"
-                                data-bs-target="#loginModal">Iniciar sesión</a>
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" aria-current="page" href="#quien-somos">Quienes somos</a>
                         </li>
-
-                        <!-- Mostrar solo si SÍ está logeado -->
-                        <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
-                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
-                                data-bs-toggle="dropdown">
-                                Bienvenido, <span sec:authentication="name"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#productos">Productos</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#footer">Contacto</a>
+                        </li>
+                        <th:block th:if="${session.usuarioLogeado == null}">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                    Iniciar sesión
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" th:href="@{/register}">
+                                    Registrarse
+                                </a>
+                            </li>
+                        </th:block>
+
+                        <th:block th:if="${session.usuarioLogeado != null}">
+                            <li class="nav-item d-flex align-items-center me-2">
+                                <span class="nav-link text-white">
+                                    ¡Bienvenido, <b th:text="${session.usuarioLogeado.nombre}">Nombre Usuario</b>!
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white btn btn-outline-danger" th:href="@{/logout}">Cerrar Sesión</a>
+                            </li>
+                        </th:block>
                     </ul>
+
+
                 </div>
             </div>
         </nav>
@@ -67,39 +82,32 @@
                     <div class="modal-body">
 
                         <!-- Formulario de login -->
-                        <form th:action="@{/doLogin}" method="post">
+                            <form th:action="@{/login}" method="POST" >
 
-                            <!-- Campo usuario/email -->
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Correo Electrónico</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
-                            </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Contraseña</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <div class="mb-3">
+                                    <p>¿No tienes una cuenta? <a th:href="@{/register}" class="link-secondary">Regístrate</a></p>
+                                </div>
+                                <button type="submit" class="btn btn-dark w-100">Ingresar</button>
+                            </form>
 
-                            <!-- Campo contraseña -->
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
-                            </div>
-
-                            <!-- Token CSRF (obligatorio si no lo desactivaste) -->
-                            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-
-                            <!-- Enlace a registro -->
-                            <p class="mt-2">¿No tienes cuenta? <a th:href="@{/register}">Regístrate</a></p>
-
-                            <!-- Botón -->
-                            <button type="submit" class="btn btn-warning w-100">Ingresar</button>
-                        </form>
-
-                        <!-- Mensaje de error en caso de login fallido -->
+                        <!-- Mensaje de error en caso de login fallido 
                         <div th:if="${param.error}" class="alert alert-danger mt-3">
                             Usuario o contraseña incorrectos
                         </div>
 
-                        <!-- Mensaje en caso de logout -->
+                        
                         <div th:if="${param.logout}" class="alert alert-success mt-3">
                             Has cerrado sesión correctamente
-                        </div>
+                        </div>  -->
+
                     </div>
                 </div>
             </div>
