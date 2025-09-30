@@ -28,6 +28,28 @@
                     <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#promocion">Promoción</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <th:block th:if="${session.usuarioLogeado == null}">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                    Iniciar sesión
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" th:href="@{/register}">
+                                    Registrarse
+                                </a>
+                            </li>
+                        </th:block>
+                        <th:block th:if="${session.usuarioLogeado != null}">
+                            <li class="nav-item d-flex align-items-center me-2">
+                                <span class="nav-link text-white">
+                                    ¡Bienvenido, <b th:text="${session.usuarioLogeado.nombre}">Nombre Usuario</b>!
+                                </span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white btn btn-outline-danger" th:href="@{/logout}">Cerrar Sesión</a>
+                            </li>
+                    </th:block>
                 </ul>
                 <div id="carrito-flotante" class="carrito-flotante ms-5">
                     <h4 class="nav-link dropdown-toggle " id="carritoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">🛒 </h4>
@@ -40,7 +62,33 @@
             </div>
         </div>
     </nav>
-
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Formulario de login -->
+                    <form th:action="@{/login}" method="POST" >
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <p>¿No tienes una cuenta? <a th:href="@{/register}" class="link-secondary">Regístrate</a></p>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Ingresar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="position-relative">
         <video autoplay muted loop playsinline class="w-100" style="height: 400px; object-fit: cover;">
@@ -56,7 +104,6 @@
         <div class="container">
             <h2 class="text-center mb-4">Nuestros Productos</h2>
             <div class="row g-4">
-
                 <div class="col-6 col-md-6 col-lg-3 mt-5">
                     <div class="card h-100">
                         <img src="imagenes/Reloj_Deportivo.png" class="card-img-top" alt="Reloj Deportivo">
