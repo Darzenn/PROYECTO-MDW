@@ -51,17 +51,15 @@
                             </li>
                     </th:block>
                 </ul>
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
-
-                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <p>Try scrolling the rest of the page to see this option in action.</p>
-                    </div>
-</div>
+                
+                <div id="carrito-flotante" class="carrito-flotante ms-5">
+                    <h4 class="nav-link dropdown-toggle " id="carritoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">🛒 </h4>
+                        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="carritoDropdown" style="width: 250px;">
+                        <li><ul id="lista-carrito" class="list-unstyled mb-2"></ul></li>
+                        <li><p class="fw-bold">Total: S/ 0.00</p></li>
+                        <li><a href="zonapago.html" class="btn btn-success w-100">Pagar</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
