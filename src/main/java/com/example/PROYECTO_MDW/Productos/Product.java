@@ -1,4 +1,4 @@
-package com.Productos;
+package com.example.PROYECTO_MDW.Productos;
 
 public class Product {
     private int id;

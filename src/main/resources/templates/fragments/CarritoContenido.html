@@ -1,0 +1,74 @@
+<div th:fragment="interactiveCart" xmlns:th="http://www.thymeleaf.org">
+    
+    <div th:if="${errorStock}" class="alert alert-warning mt-3 text-center" role="alert">
+        <span th:text="${errorStock}"></span>
+    </div>
+
+    <div th:if="${cartDetails.isEmpty()}" class="alert alert-info">
+        Tu carrito está vacío.
+    </div>
+
+    <div th:unless="${cartDetails.isEmpty()}">
+        
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cant.</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${cartDetails}">
+                    <td th:text="${item.product.name}" class="align-middle"></td>
+                    
+                    <td class="align-middle">
+                        <div class="d-flex align-items-center">
+                            
+                            <form th:action="@{/carrito/actualizar}" method="post" class="d-flex me-1">
+                                <input type="hidden" name="productId" th:value="${item.product.id}">
+                                <input type="hidden" name="newQuantity" th:value="${item.quantity - 1}">
+                                <button type="submit" class="btn btn-sm btn-outline-secondary" 
+                                        th:disabled="${item.quantity le 1}" title="Disminuir">
+                                    -
+                                </button>
+                            </form>
+                            
+                            <span class="px-2" th:text="${item.quantity}"></span>
+
+                            <form th:action="@{/carrito/actualizar}" method="post" class="d-flex">
+                                <input type="hidden" name="productId" th:value="${item.product.id}">
+                                <input type="hidden" name="newQuantity" th:value="${item.quantity + 1}">
+                                
+                                <button type="submit" class="btn btn-sm btn-outline-secondary" 
+                                        th:disabled="${item.quantity ge item.product.stock}" 
+                                        th:title="${item.quantity ge item.product.stock} ? 'Stock Máximo Alcanzado' : 'Aumentar'">
+                                    +
+                                </button>
+                            </form>
+                        </div>
+                        <small th:if="${item.quantity ge item.product.stock}" class="text-danger">Stock Máx.</small>
+                    </td>
+                    
+                    <td class="align-middle">S/ <span th:text="${#numbers.formatDecimal(item.subtotal, 0, 'COMMA', 2, 'POINT')}"></span></td>
+                    
+                    <td class="align-middle">
+                        <form th:action="@{/carrito/actualizar}" method="post">
+                            <input type="hidden" name="productId" th:value="${item.product.id}">
+                            <input type="hidden" name="newQuantity" value="0">
+                            <button type="submit" class="btn btn-sm btn-danger" title="Eliminar Producto">
+                                X
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="border-top pt-3">
+            <p class="fw-bold">Total: S/ <span th:text="${#numbers.formatDecimal(cartTotal, 0, 'COMMA', 2, 'POINT')}"></span></p>
+            <a th:href="@{/zonapago}" class="btn btn-success w-100 mt-2">Finalizar Compra</a>
+        </div>
+    </div>
+</div>

@@ -13,7 +13,7 @@ public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Excepti
         http
                 .authorizeHttpRequests(auth -> auth
                 // Rutas públicas
-                .requestMatchers("/", "/index", "/registerzoun", "/productos", "/register", "/login", "/logout", "/css/**", "/js/**").permitAll()
+                .requestMatchers("/", "/index", "/registerzoun", "/productos", "/register", "/login", "/logout", "/css/**", "/js/**", "/carrito/agregar", "/carrito/eliminar", "/carrito/actualizar").permitAll()
                 // Cualquier otra requiere login
                 .anyRequest().authenticated()
 )

@@ -1,4 +1,4 @@
-package com.example.PROYECTO_MDW.Model;
+package com.example.PROYECTO_MDW.Controller;
 import com.example.PROYECTO_MDW.Usuarios.User;
 import com.example.PROYECTO_MDW.Usuarios.UserService;
 import jakarta.servlet.http.HttpSession;

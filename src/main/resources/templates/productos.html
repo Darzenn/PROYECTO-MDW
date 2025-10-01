@@ -51,14 +51,11 @@
                             </li>
                     </th:block>
                 </ul>
-                
+                <!-- Carrito del navbar -->
                 <div id="carrito-flotante" class="carrito-flotante ms-5">
-                    <h4 class="nav-link dropdown-toggle " id="carritoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">🛒 </h4>
-                        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="carritoDropdown" style="width: 250px;">
-                        <li><ul id="lista-carrito" class="list-unstyled mb-2"></ul></li>
-                        <li><p class="fw-bold">Total: S/ 0.00</p></li>
-                        <li><a href="zonapago.html" class="btn btn-success w-100">Pagar</a></li>
-                    </ul>
+                    <button class="btn btn-link nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-controls="offcanvasCarrito" title="Ver Carrito de Compras">
+                        🛒 Carrito
+                    </button>
                 </div>
             </div>
         </div>
@@ -101,6 +98,7 @@
     </section>
 
 
+
     <section id="productos" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Nuestros Productos</h2>
@@ -114,7 +112,12 @@
                             <p class="text-muted mb-1">Resistente al agua, cronómetro</p>
                             <p class="fw-bold">S/ 50</p>
                             <div class="mb-2">★★★★☆ <span>(42)</span></div>
-                            <button class="btn btn-warning w-100">Comprar</button>
+                            <form th:action="@{/carrito/agregar}" method="post">
+                                <input type="hidden" name="productId" value="101">
+                                <input type="hidden" name="quantity" value="1">
+                                
+                                <button type="submit" class="btn btn-warning w-100">Comprar</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -273,6 +276,18 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasCarritoLabel">🛒 Tu Carrito de Compras</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div th:insert="fragments/CarritoContenido :: interactiveCart">
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

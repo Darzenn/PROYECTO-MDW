@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div class="container mt-5">
+        <h1>Tu Carrito de Compras Completo</h1>
+        <hr>
+        
+        <div th:insert="fragments/CarritoContenido :: interactiveCart"></div>
+        
+        <a th:href="@{/productos}" class="btn btn-secondary mt-3">Seguir Comprando</a>
+    </div>
+    </body>
+</html>
