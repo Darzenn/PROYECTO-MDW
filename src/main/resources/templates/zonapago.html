@@ -27,8 +27,19 @@
         <main>
             <section id="resumen-carrito">
                 <h2>🧾 Detalle de Productos</h2>
-                <ul id="lista-productos"></ul>
-                <p id="total-final">Total: S/ 0.00</p>
+                <ul id="lista-productos" style="list-style: none; padding: 0;">
+                    <li th:each="item : ${cartDetails}" style="margin-bottom: 8px; border-bottom: 1px dashed #ccc; padding-bottom: 5px;">
+                        <span th:text="${item.quantity}" class="fw-bold">1</span> x
+                        <span th:text="${item.product.name}">Producto Ejemplo</span>
+                        (S/ <span th:text="${#numbers.formatDecimal(item.product.price, 0, 'COMMA', 2, 'POINT')}">0.00</span> c/u)
+                        - Subtotal:
+                        <span class="fw-bold">S/ <span th:text="${#numbers.formatDecimal(item.subtotal, 0, 'COMMA', 2, 'POINT')}">0.00</span></span>
+                    </li>
+                </ul>
+                <!-- se muestra ek total -->
+                <p id="total-final" class="fw-bold fs-5 mt-3 pt-2 border-top">
+                    Total General: S/ <span th:text="${#numbers.formatDecimal(cartTotal, 0, 'COMMA', 2, 'POINT')}">0.00</span>
+                </p>
             </section>
 
             <section id="form-pago">
@@ -84,8 +95,7 @@
 
                     <div id="resumenPedido" class="resumen-pedido">
                         <h3>Resumen del Pedido:</h3>
-                        <p>Descuento del 10%: <span id="descuento">S/ 0.00</span></p>
-                        <p>Total a Pagar: <span id="totalPagar">S/ 0.00</span></p>
+                        <p>Total a Pagar: <span id="totalPagar">S/ <span th:text="${#numbers.formatDecimal(cartTotal, 0, 'COMMA', 2, 'POINT')}">0.00</span></span></p>
                         <p id="mensajePago" class="mensaje-pago"></p>
                     </div>
                 </form>
