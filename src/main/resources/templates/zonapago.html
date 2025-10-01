@@ -1,111 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Zona de Pago - Tiempo Nativo</title>
-        <link rel="stylesheet" href="estiloss/zonapago.css">
-    </head>
-    <body>
-        
-        <div class="video-fondo">
-            <video autoplay muted loop id="videoFondo">
-                <source src="videos/videoRelojLujoso5.mp4" type="video/mp4">
-                Your browser does not support the <code>video</code> tag.
-            </video>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona de Pago - Tiempo Nativo</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estiloss/zonapago.css">
+</head>
+<body class="bg-dark text-light">
+  
+  <!-- Fondo de video -->
+  <div class="video-fondo position-fixed top-0 start-0 w-100 h-100 z-n1">
+    <video autoplay muted loop id="videoFondo" class="w-100 h-100 object-fit-cover">
+      <source src="videos/videoRelojLujoso5.mp4" type="video/mp4">
+      Tu navegador no soporta el <code>video</code>.
+    </video>
+  </div>
+
+  <!-- HEADER -->
+  <header class="py-4 text-center bg-dark bg-opacity-75">
+    <div class="d-flex justify-content-center align-items-center mb-3">
+      <img src="imagenes/balanza de oro.png" alt="Logo" width="50" class="me-2">
+      <h1 class="fw-bold">VALLOIR</h1>
+    </div>
+    <h2 class="fw-light">🛒 Finalizar Compra - ValloirTime</h2>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container my-5">
+    <div class="row g-4">
+
+      <!-- Carrito -->
+      <section id="resumen-carrito" class="col-md-6">
+        <div class="card shadow-lg bg-dark bg-opacity-75 text-light">
+          <div class="card-body">
+            <h2 class="h4 mb-3">🧾 Detalle de Productos</h2>
+            <ul id="lista-productos" class="list-group list-group-flush">
+              <li class="list-group-item bg-transparent text-light border-light"
+                  th:each="item : ${cartDetails}">
+                <span th:text="${item.quantity}" class="fw-bold">1</span> x
+                <span th:text="${item.product.name}">Producto Ejemplo</span>
+                (S/ <span th:text="${#numbers.formatDecimal(item.product.price, 0, 'COMMA', 2, 'POINT')}">0.00</span> c/u)
+                <br>
+                <span class="fw-bold">Subtotal: S/ 
+                  <span th:text="${#numbers.formatDecimal(item.subtotal, 0, 'COMMA', 2, 'POINT')}">0.00</span>
+                </span>
+              </li>
+            </ul>
+            <p id="total-final" class="fw-bold fs-5 mt-3 pt-2 border-top">
+              Total General: S/ <span th:text="${#numbers.formatDecimal(cartTotal, 0, 'COMMA', 2, 'POINT')}">0.00</span>
+            </p>
+          </div>
         </div>
-        
-        <header>
-            <div class="logo">
-                <img src="imagenes/balanza de oro.png" alt=""/>
-                <h1>VALLOIR</h1>
-            </div>
+      </section>
+
+      <!-- Formulario de pago -->
+      <section id="form-pago" class="col-md-6">
+        <div class="card shadow-lg bg-dark bg-opacity-75 text-light">
+          <div class="card-body">
+            <h2 class="h4 mb-3">💳 Información de Pago</h2>
             
-            <h1>🛒 Finalizar Compra - ValloirTime</h1>
-        </header>
+            <form id="pago-form" class="needs-validation" novalidate>
+              
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre Completo:</label>
+                <input type="text" id="nombre" class="form-control" required>
+              </div>
 
-        <main>
-            <section id="resumen-carrito">
-                <h2>🧾 Detalle de Productos</h2>
-                <ul id="lista-productos" style="list-style: none; padding: 0;">
-                    <li th:each="item : ${cartDetails}" style="margin-bottom: 8px; border-bottom: 1px dashed #ccc; padding-bottom: 5px;">
-                        <span th:text="${item.quantity}" class="fw-bold">1</span> x
-                        <span th:text="${item.product.name}">Producto Ejemplo</span>
-                        (S/ <span th:text="${#numbers.formatDecimal(item.product.price, 0, 'COMMA', 2, 'POINT')}">0.00</span> c/u)
-                        - Subtotal:
-                        <span class="fw-bold">S/ <span th:text="${#numbers.formatDecimal(item.subtotal, 0, 'COMMA', 2, 'POINT')}">0.00</span></span>
-                    </li>
-                </ul>
-                <!-- se muestra ek total -->
-                <p id="total-final" class="fw-bold fs-5 mt-3 pt-2 border-top">
-                    Total General: S/ <span th:text="${#numbers.formatDecimal(cartTotal, 0, 'COMMA', 2, 'POINT')}">0.00</span>
-                </p>
-            </section>
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico:</label>
+                <input type="email" id="email" class="form-control" required>
+              </div>
 
-            <section id="form-pago">
-                <h2>💳 Información de Pago</h2>
-                <form id="pago-form">
-                    <label for="nombre">Nombre Completo:</label>
-                    <input type="text" id="nombre" required>
+              <div class="mb-3">
+                <label for="tarjeta" class="form-label">Número de Tarjeta:</label>
+                <input type="text" id="tarjeta" maxlength="19" class="form-control" required>
+              </div>
 
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" required>
-
-                    <label for="tarjeta">Número de Tarjeta:</label>
-                    <input type="text" id="tarjeta" maxlength="19" required>
-
-                    <label>Fecha de Expiración:</label>
-                    <div class="fecha-expiracion">
-                        <select id="mes" required>
-                            <option value="">Mes</option>
-                            <option value="01">01</option>
-                            <option value="02">02</option>
-                            <option value="03">03</option>
-                            <option value="04">04</option>
-                            <option value="05">05</option>
-                            <option value="06">06</option>
-                            <option value="07">07</option>
-                            <option value="08">08</option>
-                            <option value="09">09</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-
-                        <select id="anio" required>
-                            <option value="">Año</option>
-                            <option value="2025">2025</option>
-                            <option value="2026">2026</option>
-                            <option value="2027">2027</option>
-                            <option value="2028">2028</option>
-                            <option value="2029">2029</option>
-                            <option value="2030">2030</option>
-                        </select>
-                    </div>
-
-                    <label for="cvv">CVV:</label>
-                    <input type="password" id="cvv" maxlength="4" required>
-
-
-                    <label for="cupon">Código de Cupón (opcional):</label>
-                    <input type="text" id="cupon" name="cupon">
-
-
-                    <button type="submit">Confirmar Pago</button>
-
-                    <div id="resumenPedido" class="resumen-pedido">
-                        <h3>Resumen del Pedido:</h3>
-                        <p>Total a Pagar: <span id="totalPagar">S/ <span th:text="${#numbers.formatDecimal(cartTotal, 0, 'COMMA', 2, 'POINT')}">0.00</span></span></p>
-                        <p id="mensajePago" class="mensaje-pago"></p>
-                    </div>
-                </form>
-
-                <div id="mensaje-exito" hidden>
-                    ✅ Pago realizado con éxito. ¡Gracias por tu compra!
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="mes" class="form-label">Mes:</label>
+                  <select id="mes" class="form-select" required>
+                    <option value="">Mes</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
                 </div>
-            </section>
-        </main>
+                <div class="col">
+                  <label for="anio" class="form-label">Año:</label>
+                  <select id="anio" class="form-select" required>
+                    <option value="">Año</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                    <option>2029</option>
+                    <option>2030</option>
+                  </select>
+                </div>
+              </div>
 
-        <script src="scripts JS/scriptPrincipal.js"></script>
-    </body>
+              <div class="mb-3">
+                <label for="cvv" class="form-label">CVV:</label>
+                <input type="password" id="cvv" maxlength="4" class="form-control" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="cupon" class="form-label">Código de Cupón (opcional):</label>
+                <input type="text" id="cupon" class="form-control">
+              </div>
+
+              <button type="submit" class="btn btn-warning w-100 fw-bold">Confirmar Pago</button>
+
+              <!-- Resumen del Pedido -->
+              <div id="resumenPedido" class="resumen-pedido mt-4">
+                <h3 class="h5">Resumen del Pedido:</h3>
+                <p>Total a Pagar: <span id="totalPagar">S/ 
+                  <span th:text="${#numbers.formatDecimal(cartTotal, 0, 'COMMA', 2, 'POINT')}">0.00</span>
+                </span></p>
+                <p id="mensajePago" class="mensaje-pago text-success"></p>
+              </div>
+            </form>
+
+            <div id="mensaje-exito" class="alert alert-success mt-3 d-none">
+              ✅ Pago realizado con éxito. ¡Gracias por tu compra!
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts JS/scriptPrincipal.js"></script>
+</body>
 </html>
