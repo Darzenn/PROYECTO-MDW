@@ -17,6 +17,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
     private static final String CART_SESSION_KEY = "carrito";
+    
     @PostMapping("/carrito/agregar")
     public String agregarAlCarrito(@RequestParam int productId,
                                     @RequestParam int quantity,

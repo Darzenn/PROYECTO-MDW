@@ -38,6 +38,7 @@ public class AuthController {
             }
             ra.addFlashAttribute("errorRegistro", errorMsg);
             ra.addFlashAttribute("user", user);
+            
             return "redirect:/register";
         }
     }
@@ -53,7 +54,9 @@ public class AuthController {
             System.out.println("INGRESAR CORREO Y CONTRASEÑA");
             return "index";
         }
+
         User usuario = userService.login(email, password);
+        
         if (usuario != null) {
             session.setAttribute("usuarioLogeado", usuario);
             return "redirect:/";
