@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
-    
+
     @Autowired
     private ProductService productService;
     private static final String CART_SESSION_KEY = "carrito";
-    
+
     @GetMapping("/")
     public String mostrarIndex() {
         return "index";
@@ -33,7 +33,7 @@ public class IndexController {
         model.addAllAttributes(cartData);
         return "productos";
     }
-    
+
     @GetMapping("/register")
     public String mostrarRegistro(Model model) {
         model.addAttribute("user", new User());
@@ -46,7 +46,7 @@ public class IndexController {
         model.addAllAttributes(cartData);
         return "carrito";
     }
-    
+
     @GetMapping("/zonapago")
     public String mostrarZonaPago(HttpSession session, Model model) {
         Map<String, Object> cartData = getCartDetails(session);
@@ -54,13 +54,13 @@ public class IndexController {
         return "zonapago";
     }
 
-        private Map<String, Object> getCartDetails(HttpSession session) {
-            @SuppressWarnings("unchecked")
+    private Map<String, Object> getCartDetails(HttpSession session) {
+        @SuppressWarnings("unchecked")
         Map<Integer, Integer> cart = (Map<Integer, Integer>) session.getAttribute(CART_SESSION_KEY);
-        
+
         List<Map<String, Object>> cartDetails = new ArrayList<>();
         double total = 0.0;
-        
+
         if (cart != null) {
             for (Map.Entry<Integer, Integer> entry : cart.entrySet()) {
                 Product product = productService.getProductById(entry.getKey());
@@ -68,7 +68,7 @@ public class IndexController {
                     int quantity = entry.getValue();
                     double subtotal = product.getPrice() * quantity;
                     total += subtotal;
-                    
+
                     Map<String, Object> detail = new HashMap<>();
                     detail.put("product", product);
                     detail.put("quantity", quantity);
@@ -77,10 +77,10 @@ public class IndexController {
                 }
             }
         }
-        
+
         Map<String, Object> result = new HashMap<>();
         result.put("cartDetails", cartDetails);
         result.put("cartTotal", total);
         return result;
     }
-    }
+}

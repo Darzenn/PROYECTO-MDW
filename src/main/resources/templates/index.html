@@ -18,7 +18,6 @@
 <body>
     <header>
 
-
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-body-tertiary fixed-top m-0 p-0">
             <div class="container-fluid bg-dark">
@@ -43,7 +42,8 @@
                         </li>
                         <th:block th:if="${session.usuarioLogeado == null}">
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <a class="nav-link text-white" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">
                                     Iniciar sesión
                                 </a>
                             </li>
@@ -61,7 +61,8 @@
                                 </span>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white btn btn-outline-danger" th:href="@{/logout}">Cerrar Sesión</a>
+                                <a class="nav-link text-white btn btn-outline-danger" th:href="@{/logout}">Cerrar
+                                    Sesión</a>
                             </li>
                         </th:block>
                     </ul>
@@ -81,20 +82,21 @@
                     </div>
                     <div class="modal-body">
                         <!-- Formulario de login -->
-                            <form th:action="@{/login}" method="POST" >
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="password" class="form-label">Contraseña</label>
-                                    <input type="password" class="form-control" id="password" name="password" required>
-                                </div>
-                                <div class="mb-3">
-                                    <p>¿No tienes una cuenta? <a th:href="@{/register}" class="link-secondary">Regístrate</a></p>
-                                </div>
-                                <button type="submit" class="btn btn-dark w-100">Ingresar</button>
-                            </form>
+                        <form th:action="@{/login}" method="POST">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <p>¿No tienes una cuenta? <a th:href="@{/register}"
+                                        class="link-secondary">Regístrate</a></p>
+                            </div>
+                            <button type="submit" class="btn btn-dark w-100">Ingresar</button>
+                        </form>
 
                         <!-- Mensaje de error en caso de login fallido
                         <div th:if="${param.error}" class="alert alert-danger mt-3">
@@ -113,7 +115,6 @@
 
     </header>
 
-
     <main class="m-0 p-0 pt-5">
 
         <section class="position-relative vh-100 overflow-hidden">
@@ -121,16 +122,18 @@
             <div>
                 <video autoplay muted loop playsinline id="videoFondo"
                     class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover">
-                    <source src="videos/videoRelojLujoso.mp4" type="video/mp4">
-                    Your browser does not support the <code>video</code> tag.
-                    <div class="overlay">content</div>
+                    <source src="videos/VideoRelojLujoso.mp4" type="video/mp4">
+                    Tu navegador no soporta el <code>video</code> tag.
                 </video>
             </div>
 
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
             <div class="text-center text-white translate-middle position-absolute top-50 start-50">
                 <h1 class="display-3 fw-bold">Valloir</h1>
-                <p>Tradición que le da valor al tiempo.</p>
+                <p>No vendemos relojes, entregamos legado.</p>
             </div>
+
         </section>
 
         <section id="quien-somos">
